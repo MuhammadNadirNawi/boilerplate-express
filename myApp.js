@@ -48,6 +48,19 @@ app.get('/:word/echo',function(req, res,){
 }
 )
 
+app.post('/name', (function(req, res, next){
+  
+}
+)
+)
+app.get('/name', (function(req, res){
+  const {first, last} = req.query
+  const fullName = first + " " + last
+ res.send({name: fullName})
+}
+)
+)
+
 
 
 
