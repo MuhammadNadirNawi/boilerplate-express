@@ -51,7 +51,9 @@ app.get('/:word/echo',function(req, res,){
 )
 
 app.post('/name', (function(req, res, next){
-  
+  const {first, last} = req.body
+  const fullName = first + " " + last
+  res.send({name: fullName})
 }
 )
 )
