@@ -13,17 +13,25 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + "/views/index.html")
 })
 
-app.get('/json',function(req, res){
+// app.get('/json',function(req, res){
 
-  if (process.env.MESSAGE_STYLE == "uppercase") {
-    res.json(
-      {"message": "HELLO JSON"}
-    )
-  }else{
-    res.json(
-      {"message": "Hello json"}
-    )
-  }
+//   if (process.env.MESSAGE_STYLE == "uppercase") {
+//     res.json(
+//       {"message": "HELLO JSON"}
+//     )
+//   }else{
+//     res.json(
+//       {"message": "Hello json"}
+//     )
+//   }
+// },
+// )
+app.get('/json',function(req, res, next){
+  // console.log(req.method)
+  // console.log(req.path)
+  // console.log(req.ip)
+  console.log(req.method + " " + req.path + " - " + req.ip)
+  next()
 },
 )
 
